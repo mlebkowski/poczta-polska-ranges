@@ -1,0 +1,21 @@
+{
+  "name": "nassau/poczta-polska-ranges",
+  "description": "Parse ranges provided by Poczta Polska in their PNA list",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nassau\\PocztaPolskaRanges\\": "src"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maciej Łebkowski",
+      "email": "m.lebkowski@gmail.com"
+    }
+  ],
+  "require": {}
+}
