@@ -34,6 +34,11 @@ class RangesParser
             throw new RangeParserException(sprintf('Range could not be parsed: "%s"', $range));
         }
 
+        $expected = sizeof(explode(', ', $range));
+        if (sizeof($matches) !== $expected) {
+            throw new RangeParserException(sprintf('Only %d out of %d ranges could be parsed: "%s"', sizeof($matches), $expected, $range));
+        }
+
         return array_map(function ($item) {
             return $this->parseItem($item);
         }, $matches);
