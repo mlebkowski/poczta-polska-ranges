@@ -6,7 +6,7 @@ class RangesParser
 {
     const RE = '/
         (?(DEFINE)
-            (?P<NUMBER>\d+\s?[a-z]?)
+            (?P<NUMBER>\d+\s?[a-z]{0,2})
             (?P<COMPOUND>(?&NUMBER)(\/(?&NUMBER))?)
             (?P<DK>DK)
             (?P<PARITY>p|n)
@@ -77,7 +77,7 @@ class RangesParser
         $value = (int)$number;
 
         if ((string)$value !== $number) {
-            $value += (ord($number[strlen($number)-1])-ord('a')+1)/100;
+            $value += (ord($number[strlen($value)])-ord('a')+1)/100;
         }
 
         return $value;

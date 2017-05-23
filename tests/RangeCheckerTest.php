@@ -47,6 +47,9 @@ class RangeCheckerTest extends \PHPUnit_Framework_TestCase
             ['61', '60/62', false],
 
             ['60', '55-69/71(n), 60', true],
+
+            ['2FF', '2-2h', true],
+            ['2HZ', '2-2h', true],
         ];
     }
 }
